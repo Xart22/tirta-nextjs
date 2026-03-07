@@ -4,34 +4,50 @@ import Link from "next/link";
 type Service = {
   title: string;
   description: string;
+  usage: string;
+  benefit: string;
   image: string;
 };
 
 const services: Service[] = [
   {
     title: "Swedish Bliss",
-    description:
-      "Gentle massage to calm the nervous system and ease daily stress.",
+    description: "Gentle rhythmic strokes for full-body relaxation.",
+    usage:
+      "Ideal for first-time massage guests, stress relief, and sleep quality.",
+    benefit:
+      "Helps reduce tension, support circulation, and calm the nervous system.",
     image:
       "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
   },
   {
     title: "Deep Recovery",
-    description: "Focused deep tissue work to release chronic muscle tension.",
+    description: "Focused deep tissue pressure for persistent tight muscles.",
+    usage:
+      "Best for back, shoulder, and neck tightness from work, posture, or activity.",
+    benefit:
+      "Releases deep muscle knots, improves mobility, and eases chronic discomfort.",
     image:
       "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80",
   },
   {
-    title: "Hot Stone Ritual",
+    title: "Earth & Fire Ritual",
     description:
-      "Warm volcanic stones to deeply relax muscles and restore balance.",
+      "Heated volcanic stones to soften and relax deep muscle layers.",
+    usage:
+      "Great when your body feels heavy, cold, fatigued, or deeply stressed.",
+    benefit:
+      "Encourages deeper relaxation, better blood flow, and faster tension release.",
     image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+      "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80",
   },
   {
-    title: "Reflexology",
-    description:
-      "Targeted foot therapy to support energy and overall well-being.",
+    title: "The Sole Retreat",
+    description: "Targeted pressure therapy focused on foot reflex points.",
+    usage:
+      "Suitable for clients with tired feet, prolonged standing, or energy dips.",
+    benefit:
+      "Supports whole-body balance, reduces foot fatigue, and refreshes energy.",
     image:
       "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80",
   },
@@ -80,7 +96,6 @@ export default function Home() {
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
-
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-br from-emerald-900/90 via-teal-800/80 to-stone-900/90" />
         <div
@@ -162,7 +177,6 @@ export default function Home() {
           </svg>
         </div>
       </section>
-
       <section className="relative py-32">
         <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-teal-200 to-transparent" />
         <div className="mx-auto max-w-7xl px-6">
@@ -200,7 +214,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="relative overflow-hidden bg-linear-to-b from-stone-50 to-white py-32">
         <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-teal-100/30 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-emerald-100/30 blur-3xl" />
@@ -214,7 +227,7 @@ export default function Home() {
               Signature Services
             </h2>
             <p className="text-lg text-gray-600">
-              Tailored treatments to restore balance and peace.
+              Short, clear guidance to help you choose the right treatment.
             </p>
           </div>
 
@@ -236,8 +249,16 @@ export default function Home() {
                   <h3 className="mb-3 text-xl font-medium text-gray-900">
                     {service.title}
                   </h3>
-                  <p className="leading-relaxed text-gray-600">
+                  <p className="mb-3 leading-relaxed text-gray-600">
                     {service.description}
+                  </p>
+                  <p className="mb-2 text-sm leading-relaxed text-gray-600">
+                    <span className="font-medium text-gray-800">Usage:</span>{" "}
+                    {service.usage}
+                  </p>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    <span className="font-medium text-gray-800">Benefit:</span>{" "}
+                    {service.benefit}
                   </p>
                 </div>
                 <div className="absolute top-4 right-4 flex h-10 w-10 scale-0 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition-transform duration-500 group-hover:scale-100 group-hover:rotate-45">
@@ -260,7 +281,64 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="bg-linear-to-b from-amber-50 to-orange-50 py-32">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-amber-100 px-6 py-3">
+            <svg
+              className="h-6 w-6 text-amber-700"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <span className="font-medium text-amber-900">Products We Use</span>
+          </div>
+          <h2 className="mb-6 text-4xl font-extralight text-gray-900 md:text-5xl">
+            Premium Massage Oils
+          </h2>
+          <div className="mx-auto mb-8 h-1 w-20 rounded-full bg-linear-to-r from-amber-500 to-orange-500" />
+          <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-700">
+            In line with our business plan, we use organic-friendly body care
+            products suitable for most skin types.
+          </p>
 
+          <div className="grid gap-6 md:grid-cols-2">
+            <article className="overflow-hidden rounded-3xl border border-amber-200 bg-white text-left shadow-lg">
+              <img
+                src="https://biotone.com/cdn/shop/products/ATL-ProductShots-1_800x.jpg?v=1642455242"
+                alt="Bitone massage oil"
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-6">
+                <h3 className="mb-2 text-2xl font-light text-gray-900">
+                  Biotone
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Used to support smooth massage glide with a comforting finish.
+                  Suitable for relaxation sessions and deep pressure techniques.
+                </p>
+              </div>
+            </article>
+
+            <article className="overflow-hidden rounded-3xl border border-amber-200 bg-white text-left shadow-lg">
+              <img
+                src="https://www.massagewarehouse.com/media/catalog/product/cache/c7b67f1ce99d1caa405d0fe7ed968970/h/o/hobacare_family.jpg"
+                alt="Hobacare jojoba oil"
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-6">
+                <h3 className="mb-2 text-2xl font-light text-gray-900">
+                  Hobacare Jojoba Oil
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  Chosen for lightweight hydration and skin comfort, helping
+                  keep sessions gentle for dry or sensitive-feeling skin.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
       <section className="relative overflow-hidden py-32">
         <div className="absolute inset-0 bg-linear-to-br from-teal-600 via-emerald-700 to-teal-900" />
         <div className="absolute inset-0 opacity-10">
@@ -288,7 +366,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <section className="relative overflow-hidden py-32 text-center">
         <div className="absolute inset-0 bg-linear-to-br from-emerald-50 via-teal-50 to-stone-50" />
         <div className="relative">
@@ -319,7 +396,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       <footer className="bg-linear-to-br from-slate-900 via-teal-900 to-emerald-950 py-16 text-gray-300">
         <div className="mx-auto max-w-7xl px-6">
           <div className="space-y-4 text-center">
