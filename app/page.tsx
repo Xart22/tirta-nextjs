@@ -48,8 +48,7 @@ const services: Service[] = [
       "Suitable for clients with tired feet, prolonged standing, or energy dips.",
     benefit:
       "Supports whole-body balance, reduces foot fatigue, and refreshes energy.",
-    image:
-      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80",
+    image: "/sole-retreat.png",
   },
 ];
 
@@ -423,7 +422,7 @@ export default function Home() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                Standish, Maine
+                181 Whites Bridge Rd Standish, ME
               </div>
               <div className="hidden text-teal-400 md:block">-</div>
               <div className="flex items-center gap-2">
