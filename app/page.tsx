@@ -192,7 +192,7 @@ export default function Home() {
             <div className="group relative">
               <div className="absolute -inset-4 rounded-3xl bg-linear-to-r from-teal-100 to-emerald-100 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
               <img
-                src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80"
+                src="/images/studio.jpeg"
                 alt="Calm massage studio"
                 className="relative h-128 w-full transform rounded-3xl object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
               />
