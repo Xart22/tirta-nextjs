@@ -17,8 +17,7 @@ const services: Service[] = [
       "Ideal for first-time massage guests, stress relief, and sleep quality.",
     benefit:
       "Helps reduce tension, support circulation, and calm the nervous system.",
-    image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+    image: "/images/swedish-bliss.png",
   },
   {
     title: "Deep Recovery",
@@ -38,8 +37,7 @@ const services: Service[] = [
       "Great when your body feels heavy, cold, fatigued, or deeply stressed.",
     benefit:
       "Encourages deeper relaxation, better blood flow, and faster tension release.",
-    image:
-      "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80",
+    image: "/images/earth-fire-ritual.jpeg",
   },
   {
     title: "The Sole Retreat",
@@ -49,6 +47,17 @@ const services: Service[] = [
     benefit:
       "Supports whole-body balance, reduces foot fatigue, and refreshes energy.",
     image: "/sole-retreat.png",
+  },
+  {
+    title: "Serenity Aroma Therapy",
+    description:
+      "Customized essential oil blends to enhance relaxation and mood.",
+    usage:
+      "Perfect for clients seeking a sensory experience to complement their massage session.",
+
+    benefit:
+      "Aromatherapy can enhance relaxation, uplift mood, and support emotional well-being during your session.",
+    image: "/images/serenity-aroma-therapy.jpeg",
   },
 ];
 
@@ -230,11 +239,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <article
                 key={service.title}
-                className="group relative transform overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                className="group relative flex h-full transform flex-col overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -244,21 +253,31 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="mb-3 text-xl font-medium text-gray-900">
                     {service.title}
                   </h3>
-                  <p className="mb-3 leading-relaxed text-gray-600">
+                  <p className="mb-4 min-h-14 leading-relaxed text-gray-600 text-clamp-2">
                     {service.description}
                   </p>
-                  <p className="mb-2 text-sm leading-relaxed text-gray-600">
-                    <span className="font-medium text-gray-800">Usage:</span>{" "}
-                    {service.usage}
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    <span className="font-medium text-gray-800">Benefit:</span>{" "}
-                    {service.benefit}
-                  </p>
+                  <div className="space-y-3 rounded-2xl bg-stone-50/90 p-4">
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      <span className="mb-1 block text-xs font-semibold tracking-wide text-teal-700 uppercase">
+                        Usage
+                      </span>
+                      <span className="block text-clamp-3">
+                        {service.usage}
+                      </span>
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      <span className="mb-1 block text-xs font-semibold tracking-wide text-teal-700 uppercase">
+                        Benefit
+                      </span>
+                      <span className="block text-clamp-3">
+                        {service.benefit}
+                      </span>
+                    </p>
+                  </div>
                 </div>
                 <div className="absolute top-4 right-4 flex h-10 w-10 scale-0 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition-transform duration-500 group-hover:scale-100 group-hover:rotate-45">
                   <svg
